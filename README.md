@@ -3,4 +3,4 @@
 monitoring kasus covid 19 di indonesia
 
 #Screen Shoot
-![](ss/ss1.jpg)
+![](Covid19LiveMonitor/ss/ss1.jpg)
