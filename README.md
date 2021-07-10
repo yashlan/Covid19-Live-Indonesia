@@ -13,7 +13,9 @@ https://api.kawalcorona.com/
 implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 implementation 'com.squareup.retrofit2:converter-gson:2.9.0'  
 ```
+##Download APK
 
+pergi ke > Covid19-Live-Indonesia/Covid19LiveMonitor/app/release/Covid19Indonesia.apk > pencet Download 
 
 ## Screen Shoot
 
