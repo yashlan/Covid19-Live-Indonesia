@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Monitoring Corona Virus Live Widget</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="judul">COVID19 Live Monitor</string>
+    <string name="negara">Negara</string>
+    <string name="positif">Positif</string>
+    <string name="titik_dua">:</string>
+    <string name="sembuh">Sembuh</string>
+    <string name="dirawat">Dirawat</string>
+    <string name="meninggal">Meninggal</string>
+    <string name="refresh">REFRESH</string>
+    <string name="loading">loading…</string>
+</resources>
