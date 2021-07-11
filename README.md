@@ -18,5 +18,5 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 cari di release, atau bisa juga pergi ke > Covid19LiveMonitor/app/release/Covid19Indonesia.apk > pencet Download 
 
 ## Screen Shoot
-<img src="Covid19LiveMonitor/ss/ss1.jpg" width="300"/> <img src="Covid19LiveMonitor/ss/ss2.jpg" width="300"/> <img src="Covid19LiveMonitor/ss/ss3.jpg" width="300"/>
+<img src="Covid19LiveMonitor/ss/ss1.jpg" width="200"/> <img src="Covid19LiveMonitor/ss/ss2.jpg" width="200"/> <img src="Covid19LiveMonitor/ss/ss3.jpg" width="200"/>
 
