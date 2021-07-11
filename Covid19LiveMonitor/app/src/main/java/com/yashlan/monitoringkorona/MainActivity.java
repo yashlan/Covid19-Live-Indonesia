@@ -1,21 +1,31 @@
 package com.yashlan.monitoringkorona;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,13 +46,40 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout relativeLayout;
 
     AppCompatButton btn_refresh;
+    AppCompatButton btn_prov;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        try{
+
+            Objects.requireNonNull(getSupportActionBar()).hide();
+
+            InitializeComponent();
+            FetchData();
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        btn_refresh.setOnClickListener(v -> {
+            FetchData();
+        });
+
+        btn_prov.setOnClickListener(v ->{
+            Intent i = new Intent(this, MainActivity2.class);
+            startActivity(i);
+            finish();
+        });
+
+
+    }
+
+    private void InitializeComponent(){
 
         tv_region = (TextView) findViewById(R.id.tv_region);
         tv_positif = (TextView) findViewById(R.id.tv_positif);
@@ -51,68 +88,65 @@ public class MainActivity extends AppCompatActivity {
         tv_dirawat = (TextView) findViewById(R.id.tv_dirawat);
 
         btn_refresh = (AppCompatButton) findViewById(R.id.btn_refresh);
+        btn_prov = (AppCompatButton) findViewById(R.id.btn_prov);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
-
-        FetchData();
-
-        btn_refresh.setOnClickListener(v -> {
-
-            FetchData();
-
-        });
-
-
     }
 
     private void FetchData(){
 
-        relativeLayout.setVisibility(View.VISIBLE);
+        try{
 
-        tv_region.setText(null);
-        tv_positif.setText(null);
-        tv_sembuh.setText(null);
-        tv_meninggal.setText(null);
-        tv_dirawat.setText(null);
+            relativeLayout.setVisibility(View.VISIBLE);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Api.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            tv_region.setText(null);
+            tv_positif.setText(null);
+            tv_sembuh.setText(null);
+            tv_meninggal.setText(null);
+            tv_dirawat.setText(null);
 
-        Api api = retrofit.create(Api.class);
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Api.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-        Call<List<DataRegion>> call = api.getData();
+            Api api = retrofit.create(Api.class);
 
-        call.enqueue(new Callback<List<DataRegion>>() {
-            @Override
-            public void onResponse(Call<List<DataRegion>> call, Response<List<DataRegion>> response) {
+            Call<List<DataRegion>> call = api.getDataIndonesia();
 
-                List<DataRegion> dataRegionList =  response.body();
+            call.enqueue(new Callback<List<DataRegion>>() {
+                @Override
+                public void onResponse(Call<List<DataRegion>> call, Response<List<DataRegion>> response) {
 
-                for(DataRegion d : dataRegionList){
+                    List<DataRegion> dataRegionList =  response.body();
 
-                    tv_region.setText(d.getRegionName());
-                    tv_positif.setText(d.getPositif());
-                    tv_sembuh.setText(d.getSembuh());
-                    tv_meninggal.setText(d.getMeninggal());
-                    tv_dirawat.setText(d.getDirawat());
+                    for(DataRegion d : dataRegionList){
+
+                        tv_region.setText(d.getRegionName());
+                        tv_positif.setText(d.getPositif());
+                        tv_sembuh.setText(d.getSembuh());
+                        tv_meninggal.setText(d.getMeninggal());
+                        tv_dirawat.setText(d.getDirawat());
+
+                    }
+
+                    if(call.isExecuted() || call.isCanceled()){
+                        relativeLayout.setVisibility(View.GONE);
+                    }
 
                 }
 
-                if(call.isExecuted() || call.isCanceled()){
+                @Override
+                public void onFailure(Call<List<DataRegion>> call, Throwable t) {
+
                     relativeLayout.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(), "ERROR : " + t.getMessage() + " Silakan Coba Lagi", Toast.LENGTH_LONG).show();
+                    Log.d("ERROR", "onFailure: " + t.getMessage());
                 }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<DataRegion>> call, Throwable t) {
-
-                relativeLayout.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-                Log.d("ERROR", "onFailure: " + t.getMessage());
-            }
-        });
+            });
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Monitoring Corona Virus Live Widget</string>
+    <string name="app_name">MONITORING COVID19 INDO</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="judul">COVID19 Live Monitor</string>
@@ -11,4 +11,60 @@
     <string name="meninggal">Meninggal</string>
     <string name="refresh">REFRESH</string>
     <string name="loading">loading…</string>
+    <string name="submit">Submit</string>
+    <string name="spinner_prompt">Pilih Wilayah/Provinsi :</string>
+    <string name="author">this app made with ❤ by Yashlan</string>
+
+
+    <string-array name="Provinsi_arrays">
+        <item>DKI Jakarta</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+        <item>Jawa Timur</item>
+        <item>Kalimantan Timur</item>
+        <item>Sulawesi Selatan</item>
+        <item>Banten</item>
+        <item>Bali</item>
+        <item>Riau</item>
+        <item>Daerah Istimewa Yogyakarta</item>
+        <item>Sumatera Barat</item>
+        <item>Kalimantan Selatan</item>
+        <item>Sumatera Utara</item>
+        <item>Papua</item>
+        <item>Sumatera Selatan</item>
+        <item>Kalimantan Tengah</item>
+        <item>Sulawesi Utara</item>
+        <item>Nusa Tenggara Timur</item>
+        <item>Bangka Belitung</item>
+        <item>Sulawesi Tengah</item>
+        <item>Kalimantan Utara</item>
+        <item>Lampung</item>
+        <item>Aceh</item>
+        <item>Sulawesi Tenggara</item>
+        <item>Nusa Tenggara Barat</item>
+        <item>Kepulauan Riau</item>
+        <item>Papua Barat</item>
+        <item>Maluku</item>
+        <item>Kalimantan Barat</item>
+        <item>Jambi</item>
+        <item>Bengkulu</item>
+        <item>Sulawesi Barat</item>
+        <item>Gorontalo</item>
+        <item>Maluku Utara</item>
+
+
+    </string-array>
+    <string name="title_activity_main2">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="cek_provinsi">Cek Provinsi</string>
+    <string name="kembali">BACK</string>
+
+
 </resources>

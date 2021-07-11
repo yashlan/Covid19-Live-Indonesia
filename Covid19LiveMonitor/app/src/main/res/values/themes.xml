@@ -18,4 +18,17 @@
         <item name="appWidgetBackgroundColor">@color/light_blue_600</item>
         <item name="appWidgetTextColor">@color/light_blue_50</item>
     </style>
+
+    <style name="Theme.MonitoringCoronaVirusLiveWidget.Fullscreen" parent="Theme.MonitoringCoronaVirusLiveWidget">
+        <item name="android:actionBarStyle">
+            @style/Widget.Theme.MonitoringCoronaVirusLiveWidget.ActionBar.Fullscreen
+        </item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.MonitoringCoronaVirusLiveWidget.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
 </resources>

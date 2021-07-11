@@ -28,7 +28,7 @@
     </RelativeLayout>
 
 
-    <TableRow android:padding="50dp">
+    <TableRow android:padding="35dp">
         <TextView
             android:id="@+id/tv_judul"
             android:layout_width="wrap_content"
@@ -42,21 +42,32 @@
             android:text="@string/judul" />
     </TableRow>
 
-    <TableRow android:padding="30dp">
+    <TableRow
+        android:paddingTop="5dp"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:paddingBottom="25dp">
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/spinner"
+            android:background="#ffffff"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:entries="@array/Provinsi_arrays"
-            android:prompt="@style/TextAppearance.AppCompat.SearchResult.Title" />
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSubmit"
+            android:fontFamily="@font/unisansheavy"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit" />
+            android:background="@drawable/btn_refresh"
+            android:textColor="#ffffff"
+            android:text="@string/submit" />
 
     </TableRow>
 
@@ -67,8 +78,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/negara"
-            android:gravity="center"
+            android:text="@string/provinsi"
+            android:gravity="left"
             android:textColor="#FFffff"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -86,12 +97,12 @@
 
         <TextView
             android:fontFamily="@font/unisansheavy"
-            android:id="@+id/tv_region"
+            android:id="@+id/tv_provinsi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
-            android:gravity="center"
+            android:gravity="right"
             android:textStyle="bold"
             android:textColor="#FFffff"
             android:textSize="20sp"
@@ -107,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/positif"
-            android:gravity="center"
+            android:gravity="left"
             android:textColor="#FFffff"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -130,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
-            android:gravity="center"
+            android:gravity="right"
             android:textStyle="bold"
             android:textColor="#FFffff"
             android:textSize="20sp"
@@ -146,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sembuh"
-            android:gravity="center"
+            android:gravity="left"
             android:textColor="#FFffff"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -169,46 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="#FFffff"
-            android:textSize="20sp"
-            />
-
-    </TableRow>
-
-    <TableRow android:padding="20dp">
-
-        <TextView
-            android:fontFamily="@font/unisansheavy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dirawat"
-            android:gravity="center"
-            android:textColor="#FFffff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:fontFamily="@font/unisansheavy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:text="@string/titik_dua"
-            android:gravity="center"
-            android:textColor="#FFffff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:fontFamily="@font/unisansheavy"
-            android:id="@+id/tv_dirawat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:gravity="center"
+            android:gravity="right"
             android:textStyle="bold"
             android:textColor="#FFffff"
             android:textSize="20sp"
@@ -224,7 +196,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/meninggal"
-            android:gravity="center"
+            android:gravity="left"
             android:textColor="#FFffff"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -247,7 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
-            android:gravity="center"
+            android:gravity="right"
             android:textStyle="bold"
             android:textColor="#FFffff"
             android:textSize="20sp"
@@ -255,7 +227,7 @@
 
     </TableRow>
 
-    <TableRow android:padding="25dp" android:gravity="center">
+    <TableRow android:padding="10dp" android:layout_marginTop="15dp" android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_refresh"
@@ -264,7 +236,7 @@
             android:layout_width="wrap_content"
             android:text="@string/refresh"
             android:textColor="#ffffff"
-            android:layout_marginHorizontal="60dp"
+            android:layout_marginHorizontal="100dp"
             android:textStyle="bold"
             android:fontFamily="@font/unisansheavy"
             >
@@ -273,5 +245,36 @@
 
 
     </TableRow>
+
+    <TableRow android:padding="8dp" android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_refresh"
+            android:layout_width="wrap_content"
+            android:text="@string/kembali"
+            android:textColor="#ffffff"
+            android:layout_marginHorizontal="100dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/unisansheavy"
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+
+    </TableRow>
+
+    <TextView
+        android:fontFamily="@font/unisansheavy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/author"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#FFffff"
+        android:textSize="12sp"
+        />
 
 </TableLayout>

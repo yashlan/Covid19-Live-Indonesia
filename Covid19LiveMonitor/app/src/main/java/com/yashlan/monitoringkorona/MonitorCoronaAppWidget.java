@@ -164,7 +164,7 @@ public class MonitorCoronaAppWidget extends AppWidgetProvider {
 
         Api api = retrofit.create(Api.class);
 
-        Call<List<DataRegion>> call = api.getData();
+        Call<List<DataRegion>> call = api.getDataIndonesia();
 
         RemoteViews finalRemoteViews = remoteViews;
 
