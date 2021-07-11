@@ -1,6 +1,6 @@
 ## Covid19 Live Indonesia
  
-monitoring kasus covid 19 di indonesia.
+app untuk monitoring kasus covid 19 di indonesia dan provinsi-provinsinya. semua data-datanya diambil dari > api.kawalcorona.com <
 
 ## API
 
@@ -15,7 +15,8 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 ```
 ## Download APK
 
-pergi ke > Covid19-Live-Indonesia/Covid19LiveMonitor/app/release/Covid19Indonesia.apk > pencet Download 
+cari di release, atau bisa juga pergi ke > Covid19LiveMonitor/app/release/Covid19Indonesia.apk > pencet Download 
 
 ## Screen Shoot
-<img src="Covid19LiveMonitor/ss/ss1.jpg" alt="drawing" width="300"/>
+<img src="Covid19LiveMonitor/ss/ss1.jpg" width="300"/> <img src="Covid19LiveMonitor/ss/ss2.jpg" width="300"/> <img src="Covid19LiveMonitor/ss/ss3.jpg" width="300"/>
+
